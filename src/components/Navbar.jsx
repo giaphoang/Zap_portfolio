@@ -6,7 +6,7 @@ const Navbar = () => {
         <nav className="flex items-center justify-between py-6">
             <div className="flex flex-shrink-0 items-center">
                 <a href="/" aria-label="Home">
-                    <img src="../assets/GH-Icon.png" className="mx-2" width={50} height={33} alt="Logo" />
+                    <img src={logo} className="mx-2" width={50} height={33} alt="Logo" />
                 </a>
             </div>
             
