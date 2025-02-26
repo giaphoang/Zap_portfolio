@@ -1,5 +1,5 @@
-import profilePic from "../assets/zap_photo.jpg";
-import { HERO_CONTENT } from "../constants";
+import profilePic from "@/assets/zap_photo.jpg";
+import { HERO_CONTENT } from "@/constants";
 import { motion } from "framer-motion";
 
 const containerVariants = {
