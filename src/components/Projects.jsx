@@ -1,57 +1,69 @@
-import { PROJECTS } from "@/constants";
+import { PROJECTS } from "../constants";
 import {motion} from "framer-motion";
 
 const Projects = () => {
   return (
-    <div className="pb-4">
-      <motion.h2 whileInView={{opacity:1, y:0}} initial={{opacity:0, y:-100}} transition={{duration:0.5}} className="my-20 text-center text-4xl">Projects</motion.h2>
-      <div>
-      {PROJECTS.map((project, index) => (
-        <motion.div
-          key={index}
-          className="mb-8 flex flex-wrap lg:justify-center"
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 1 }}
-        >
-          <a href={project.src} target="_blank" rel="noopener noreferrer">
-            <motion.img
-              src={project.image}
-              width={250}
-              height={250}
-              alt={project.title}
-              className="mb-6 rounded"
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: 100 }}
-              transition={{ duration: 1 }}
-            />
-          </a>
-
+    <div className="py-12 sm:py-16">
+      <motion.h2 
+        whileInView={{opacity:1, y:0}} 
+        initial={{opacity:0, y:-100}} 
+        transition={{duration:0.5}} 
+        className="my-8 sm:my-16 text-center text-3xl sm:text-4xl md:text-5xl font-bold"
+      >
+        Projects
+      </motion.h2>
+      <div className="space-y-12 sm:space-y-16">
+        {PROJECTS.map((project, index) => (
           <motion.div
-            className="w-full max-w-xl lg:w-3/4"
+            key={index}
+            className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8"
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
+            initial={{ opacity: 0, x: 100 }}
             transition={{ duration: 1 }}
           >
-            <h3 className="mb-2 font-semibold text-2xl">
-              {project.title}
-            </h3>
-            <p className="mb-4 text-stone-400">
-              {project.description}
-            </p>
-            <div>
-              {project.technologies.map((tech, techIndex) => (
-                <span
-                  key={techIndex}
-                  className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium text-stone-300"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+            <a 
+              href={project.src} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
+            >
+              <motion.img
+                src={project.image}
+                width={250}
+                height={250}
+                alt={project.title}
+                className="w-full sm:w-[250px] h-auto sm:h-[250px] rounded object-cover"
+                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: 100 }}
+                transition={{ duration: 1 }}
+              />
+            </a>
+
+            <motion.div
+              className="w-full"
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 1 }}
+            >
+              <h3 className="mb-2 font-semibold text-xl sm:text-2xl">
+                {project.title}
+              </h3>
+              <p className="mb-4 text-stone-400 text-sm sm:text-base">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="rounded bg-stone-900 px-2 py-1 text-xs sm:text-sm font-medium text-stone-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      ))}
+        ))}
       </div>
     </div>
   );
