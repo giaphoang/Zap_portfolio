@@ -1,4 +1,4 @@
-import profilePic from "@/assets/zap_photo.jpg";
+import profilePic from "@/assets/zap_photo.webp";
 import { HERO_CONTENT } from "@/constants";
 import { motion } from "framer-motion";
 
